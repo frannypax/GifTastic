@@ -50,25 +50,6 @@ function displayGifInfo(){
 };
 
 
-
-
-
-$(document).on("click",".theme", displayGifInfo);
-
-$(document).on("click",".image", function(){
-	var state =$(this).attr("data-state");
-	if(state == "still"){
-		$(this).attr("src",$(this).data("animate"));
-		$(this).attr("data-state", "animate");
-	}else{
-		$(this).attr("src", $(this).data("still"));
-		$(this).attr("data-state", "still");
-	}
-});
-
-
-
-
 var displayButtons= function(){
     $("#themeDisplay").empty(); //clearing out div
 
@@ -96,52 +77,25 @@ displayButtons();
         	return false; // added so user cannot add a blank button
         }
        
-        // Adding movie from the textbox to our array
+        // Adding theme from the textbox to our array
         theme.push(newTheme);
         
-        // Calling renderButtons which handles the processing of our movie array
         displayButtons();
     });
+
+
+$(document).on("click",".theme", displayGifInfo); //listening for click on theme button
+
+$(document).on("click",".image", function(){ // listening for click on image
+	var state =$(this).attr("data-state");
+	if(state == "still"){
+		$(this).attr("src",$(this).data("animate"));
+		$(this).attr("data-state", "animate");
+	}else{
+		$(this).attr("src", $(this).data("still"));
+		$(this).attr("data-state", "still");
+	}
+});
+
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
