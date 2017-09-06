@@ -22,7 +22,7 @@ function displayGifInfo(){
 	var results = response.data
 	console.log(results);
 
-	for(var i=0; i<results.length; i++){
+	for(var i=0; i<10; i++){
 
 		var gifDiv = $("<div>"); 
 		gifDiv.addClass("gifDiv");
@@ -65,11 +65,6 @@ $(document).on("click",".image", function(){
 		$(this).attr("data-state", "still");
 	}
 });
-
-
-
-
-
 
 
 

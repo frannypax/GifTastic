@@ -4,3 +4,8 @@
     margin: 5px;
     
 }
+img{
+	border:solid #dddddd;
+	border-radius: 4px;
+	padding: 4px
+}
