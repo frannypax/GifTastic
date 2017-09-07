@@ -1,4 +1,5 @@
 .container{
+	background: url("../images/fresh_snow_@2X.png"); 
 	height:100vh;
 	/*min-height:100%;*/
 }
