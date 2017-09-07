@@ -2,7 +2,7 @@ $( document ).ready(function(){
 
 
 //creating an array of topics
-var theme = ["Tesla","Solar Flare", "Panda","Soccer","Obama"];
+var theme = ["Tesla","Solar Storm", "Panda","Gold","Obama"];
 
 function displayGifInfo(){
 
