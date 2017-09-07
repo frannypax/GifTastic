@@ -1,8 +1,15 @@
+.container{
+	height:100vh;
+	/*min-height:100%;*/
+}
 .btn-primary 
 {
     padding: 10px 15px;
     margin: 5px;
     
+}
+.navbar-brand{
+	text-align: center
 }
 
 img{
