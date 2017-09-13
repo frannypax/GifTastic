@@ -9,7 +9,7 @@ function displayGifInfo(){
 	var newTheme = $(this).attr("themeName");
 	var queryURL= "https://api.giphy.com/v1/gifs/search?q=" + newTheme + "&api_key=e2e59352785546c39ea3cbf9076d6201"
 	console.log(queryURL);
-	// creating an AJAX call for yhe specific movie being clicked
+	// creating an AJAX call for the specific theme being clicked
 	$.ajax({
 		url: queryURL,
 		method: "GET"
