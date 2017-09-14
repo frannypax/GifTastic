@@ -1,9 +1,53 @@
 $( document ).ready(function(){
 
 
-//creating an array of topics
+//creating an array of topics and making buttons for each 
 var theme = ["Tesla","Solar Storm", "Panda","Gold","Obama"];
 
+var displayButtons= function(){
+    $("#themeDisplay").empty(); //clearing out div
+
+    for (var i=0; i<theme.length; i++){
+
+    	var gifButton=$("<button>");
+    	gifButton.addClass("theme");
+    	gifButton.addClass("btn btn-primary ");
+    	gifButton.attr("themeName", theme[i]);
+    	gifButton.text(theme[i]);
+
+    $("#themeDisplay").append(gifButton); //attaching buttons to div
+
+    }
+}
+displayButtons();
+
+//-----------------------------------------------------------------------------------------------------------------
+
+
+//function to create new theme button 
+	
+    $("#themeSearch").on("click", function(event) {
+        event.preventDefault();
+        // This line grabs the input from the textbox
+        var newTheme = $("#themeInput").val().trim();
+
+        if(newTheme == ""){
+        	return false; // added so user cannot add a blank button
+        }
+       
+        // Adding theme from the textbox to our array
+        theme.push(newTheme);
+        
+        // Calling renderButtons which handles the processing of our movie array
+        displayButtons();
+
+        $("#themeInput").val("");
+	 	//this will clear the input field 
+    });
+
+//------------------------------------------------------------------------------------------------------------------
+
+//creating a function to display images when theme button is clicked
 function displayGifInfo(){
 
 	var newTheme = $(this).attr("themeName");
@@ -49,9 +93,10 @@ function displayGifInfo(){
 	})
 };
 
+$(document).on("click",".theme", displayGifInfo); //calling displayGifInfo function when theme button is clicked
+//------------------------------------------------------------------------------------------------------------------------------------
 
-$(document).on("click",".theme", displayGifInfo);
-
+// Animation - Animation Pause
 $(document).on("click",".image", function(){
 	var state =$(this).attr("data-state");
 	if(state == "still"){
@@ -63,41 +108,6 @@ $(document).on("click",".image", function(){
 	}
 })
 
-var displayButtons= function(){
-    $("#themeDisplay").empty(); //clearing out div
 
-    for (var i=0; i<theme.length; i++){
-
-    	var gifButton=$("<button>");
-    	gifButton.addClass("theme");
-    	gifButton.addClass("btn btn-primary ");
-    	gifButton.attr("themeName", theme[i]);
-    	gifButton.text(theme[i]);
-    	$("#themeDisplay").append(gifButton);
-
-    }
-}
-displayButtons();
-
-//function to create new theme button 
-	
-    $("#themeSearch").on("click", function(event) {
-        event.preventDefault();
-        // This line grabs the input from the textbox
-        var newTheme = $("#themeInput").val().trim();
-
-        if(newTheme == ""){
-        	return false; // added so user cannot add a blank button
-        }
-       
-        // Adding movie from the textbox to our array
-        theme.push(newTheme);
-        
-        // Calling renderButtons which handles the processing of our movie array
-        displayButtons();
-
-        $("#themeInput").val("");
-	 	//this will clear the input field 
-    });
     
 });
