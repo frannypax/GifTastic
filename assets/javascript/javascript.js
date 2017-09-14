@@ -17,7 +17,8 @@ function displayGifInfo(){
 	}).done(function(response){
 	console.log(response);
 
-	$("#images").empty(); // clear everything in images div
+	$("#images").empty(); // this will clear everything(including previous images) in images div
+	
 
 	var results = response.data
 	console.log(results);
@@ -94,6 +95,9 @@ displayButtons();
         
         // Calling renderButtons which handles the processing of our movie array
         displayButtons();
+
+        $("#themeInput").val("");
+	 	//this will clear the input field 
     });
     
 });
