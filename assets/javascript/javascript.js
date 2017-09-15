@@ -38,11 +38,12 @@ displayButtons();
         // Adding theme from the textbox to our array
         theme.push(newTheme);
         
-        // then Calling renderButtons which handles the processing of our theme array
+        // then Calling renderButtons which handles the processing(creating) of our theme array
         displayButtons();
 
+        //this will clear the input field 
         $("#themeInput").val("");
-	 	//this will clear the input field 
+	 	
     });
 
 //------------------------------------------------------------------------------------------------------------------
