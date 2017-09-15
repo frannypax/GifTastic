@@ -38,7 +38,7 @@ displayButtons();
         // Adding theme from the textbox to our array
         theme.push(newTheme);
         
-        // Calling renderButtons which handles the processing of our movie array
+        // then Calling renderButtons which handles the processing of our theme array
         displayButtons();
 
         $("#themeInput").val("");
