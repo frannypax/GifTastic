@@ -2,7 +2,7 @@ $( document ).ready(function(){
 
 
 //creating an array of topics and making buttons for each 
-var theme = ["Tesla","Solar Storm", "Panda","Gold","Obama"];
+var theme = ["Tesla","Solar Storm", "Panda","Gold","yellowstone"];
 
 var displayButtons= function(){
     $("#themeDisplay").empty(); //clearing out div
@@ -33,7 +33,7 @@ displayButtons();
 
         if(newTheme == ""){
         	return false; // added so user cannot add a blank button
-        }
+        };
        
         // Adding theme from the textbox to our array
         theme.push(newTheme);
